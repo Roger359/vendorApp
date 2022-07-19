@@ -1,0 +1,38 @@
+{
+  "ed2b5c07-5ea6-4d8c-a53a-aab4eff73411": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1578/1.0.1578.2813/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://cpvenoffice365.sharepoint.com/sites/Compras": {
+        "dataSources": {
+          "Evaluacion Trimestral": {
+            "tableName": "b13b3334-0b12-40b2-909a-246e25728ea0"
+          },
+          "Quarterly Monitoring": {
+            "tableName": "e57cf5f5-de0b-4b28-bbd8-080e5bbdcd9b"
+          },
+          "Resultados Vendor Rating Apps": {
+            "tableName": "cca3a870-aac9-48f7-a5ff-20bb809f41cf"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Evaluacion Trimestral",
+      "Quarterly Monitoring",
+      "Resultados Vendor Rating Apps"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "ed2b5c07-5ea6-4d8c-a53a-aab4eff73411"
+  }
+}

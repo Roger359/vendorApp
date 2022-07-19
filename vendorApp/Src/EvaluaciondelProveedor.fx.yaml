@@ -1,0 +1,518 @@
+"EvaluaciondelProveedor As screen.'phoneDetailEditLayout_ver3.0'":
+
+    RectQuickActionBar3 As rectangle:
+        Fill: =RGBA(102, 113, 166, 1)
+        Height: =50
+        Width: =1136
+        ZIndex: =1
+
+    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
+        BorderColor: =RGBA(109, 49, 162, 1)
+        BorderThickness: =1
+        Height: =330
+        Items: ='Evaluacion Trimestral'
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =66
+        Width: =1136
+        Y: =187
+        ZIndex: =1
+
+        txt_item As label:
+            FontWeight: =FontWeight.Bold
+            Height: =33
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.Title
+            VerticalAlign: =VerticalAlign.Top
+            Width: =732
+            X: =32
+            Y: =16
+            ZIndex: =1
+
+        lbl_eva1_ID As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Bold
+            Height: =19
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =10
+            Text: =ThisItem.ID
+            VerticalAlign: =VerticalAlign.Top
+            Width: =21
+            X: =3
+            Y: =16
+            ZIndex: =2
+
+        Separator7 As rectangle:
+            BorderColor: =RGBA(109, 49, 162, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =4
+
+        Radio2 As radio:
+            FontWeight: =FontWeight.Bold
+            Height: =50
+            Items: =["5","3","1","NA"]
+            Layout: =Layout.Horizontal
+            OnSelect: =Select(Parent)
+            RadioSize: =16
+            Size: =12
+            Width: =260
+            X: =854
+            Y: =7
+            ZIndex: =5
+
+    header_Eva1 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(109, 49, 162, 1)
+        BorderThickness: =1
+        Fill: =RGBA(109, 49, 162, 1)
+        Height: =50
+        Size: =20
+        Text: ="Vendor Rating"
+        Width: =1136
+        Wrap: =false
+        ZIndex: =2
+
+    EditForm1 As form:
+        AcceptsFocus: =false
+        BorderColor: =RGBA(109, 49, 162, 1)
+        BorderThickness: =1
+        DataSource: =[@'Quarterly Monitoring']
+        Fill: =RGBA(241, 244, 249, 1)
+        Height: =136
+        Item: =resumeGallery.Selected
+        NumberOfColumns: =4
+        OnSuccess: =Back()
+        Width: =1136
+        Y: =RectQuickActionBar3.Height
+        ZIndex: =3
+
+        "'Orden de Compra_DataCard2' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Title"
+            Default: =ThisItem.'Orden de Compra'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="Orden de Compra"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            MaxLength: =DataSourceInfo([@'Quarterly Monitoring'], DataSourceInfo.MaxLength, "Title")
+            Required: =true
+            Update: =
+            Width: =283
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            lbl_ordenDeCompra As label:
+                Color: =RGBA(109, 49, 162, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =20
+                Size: =9
+                Text: =Parent.DisplayName
+                Width: =254
+                Wrap: =false
+                X: =10
+                Y: =5
+                ZIndex: =1
+
+            txt_ordenDeCompra As label:
+                FontWeight: =FontWeight.Bold
+                Height: =20
+                Size: =10
+                Text: =ThisItem.'Orden de Compra'
+                Width: =252
+                X: =12
+                Y: =30
+                ZIndex: =2
+
+        "'Fecha de Orden_DataCard2' As typedDataCard.dateEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Fecha_x0020_de_x0020_Orden"
+            Default: =ThisItem.FechaOrden
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="Fecha de Orden"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =34
+            Required: =false
+            Update: =
+            Visible: =true
+            Width: =283
+            X: =1
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey7 As label:
+                Color: =RGBA(109, 49, 162, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =20
+                Size: =9
+                Text: =Parent.DisplayName
+                Width: =178
+                Wrap: =false
+                X: =10
+                Y: =4
+                ZIndex: =1
+
+            ErrorMessage3 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =
+                ZIndex: =3
+
+            StarVisible3 As label:
+                Align: =Align.Center
+                Height: =DataCardKey7.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey7.Y
+                ZIndex: =4
+
+            Label7 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =20
+                Size: =10
+                Text: =ThisItem.FechaOrden
+                Width: =165
+                X: =14
+                Y: =30
+                ZIndex: =5
+
+        Vendor_DataCard2 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Vendor"
+            Default: =ThisItem.Vendor
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="Vendor"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            MaxLength: =DataSourceInfo([@'Quarterly Monitoring'], DataSourceInfo.MaxLength, "Vendor")
+            Required: =false
+            Update: =
+            Width: =283
+            X: =2
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey8 As label:
+                Color: =RGBA(109, 49, 162, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =20
+                PaddingBottom: =6
+                Size: =9
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =10
+                Y: =5
+                ZIndex: =1
+
+            ErrorMessage4 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =
+                ZIndex: =3
+
+            StarVisible4 As label:
+                Align: =Align.Center
+                Height: =DataCardKey8.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey8.Y
+                ZIndex: =4
+
+            Label10 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =21
+                Size: =10
+                Text: =ThisItem.Vendor
+                Width: =237
+                X: =10
+                Y: =30
+                ZIndex: =5
+
+        Solicitante_DataCard2 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Assignedto"
+            Default: =ThisItem.Solicitante
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="Solicitante"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Update: =
+            Width: =283
+            X: =3
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey9 As label:
+                Color: =RGBA(109, 49, 162, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =20
+                Size: =9
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =8
+                Y: =5
+                ZIndex: =1
+
+            ErrorMessage5 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =8
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =10
+                Y: =47
+                ZIndex: =3
+
+            Label8 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =25
+                Size: =10
+                Text: =ThisItem.Solicitante.DisplayName
+                Width: =256
+                X: =10
+                Y: =25
+                ZIndex: =4
+
+        FechadeEntregaPrometieda As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="DiasdeEntregaPromedita"
+            Default: =ThisItem.'Fecha de entrega prometida'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Quarterly Monitoring'],DataSourceInfo.DisplayName,"DiasdeEntregaPromedita")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =60
+            Required: =false
+            Width: =284
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey6 As label:
+                Color: =RGBA(109, 49, 162, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =18
+                Size: =9
+                Text: |-
+                    ="Fecha de entrega promedita:"
+                Width: =254
+                Wrap: =false
+                X: =10
+                Y: =7
+                ZIndex: =1
+
+            DataCardValue6 As label:
+                Color: =RGBA(255, 0, 0, 1)
+                DisplayMode: =Parent.DisplayMode
+                FontWeight: =FontWeight.Bold
+                Height: =30
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =10
+                Text: =ThisItem.'Fecha de entrega prometida'
+                Width: =(Parent.Width - 60) * 0.6
+                X: =18
+                Y: =30
+                ZIndex: =2
+
+        "'Datos adjuntos_DataCard2' As typedDataCard.attachmentsEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="{Attachments}"
+            Default: =ThisItem.Attachments
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'Quarterly Monitoring'],DataSourceInfo.DisplayName,"{Attachments}")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =74
+            Required: =false
+            Update: =DataCardValue7.Attachments
+            Width: =800
+            X: =1
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey10 As label:
+                AutoHeight: =true
+                Color: =RGBA(109, 49, 162, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =48
+                Size: =9
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =20
+                Y: =4
+                ZIndex: =1
+
+            DataCardValue7 As attachments:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DisplayMode: =Parent.DisplayMode
+                Height: =40
+                IsInDataCard: =true
+                Items: =Parent.Default
+                PaddingBottom: =5
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingRight: =5
+                PaddingTop: =5
+                Size: =10
+                Tooltip: =Parent.DisplayName
+                Width: =621
+                X: =165
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage9 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue7.Y + DataCardValue7.Height
+                ZIndex: =3
+
+            StarVisible8 As label:
+                Align: =Align.Center
+                Height: =DataCardKey10.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey10.Y
+                ZIndex: =4
+
+    Icon1 As icon.Cancel:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =30
+        Icon: =Icon.BackArrow
+        OnSelect: =ResetForm(EditForm1);Back()
+        Width: =30
+        X: =23
+        Y: =10
+        ZIndex: =5
+
+    Icon2 As icon.CheckBadge:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =30
+        Icon: =Icon.CheckBadge
+        OnSelect: |-
+            =// SubmitForm(EditForm1);
+            Navigate(
+                EvaluaciondelDepartamento,
+                ScreenTransition.Cover
+            )
+        Width: =30
+        X: =1081
+        Y: =10
+        ZIndex: =6
+
+    lbl_evaluacion As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(109, 49, 162, 1)
+        BorderThickness: =1
+        Fill: =RGBA(241, 244, 249, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =123
+        Size: =30
+        Text: =Round(Average(Gallery1.AllItems,Radio2.Selected.Value),1)
+        Width: =220
+        X: =916
+        Y: =517
+        ZIndex: =7
+
+    lbl_result As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(109, 49, 162, 1)
+        BorderThickness: =1
+        Color: =If(lbl_result.Text ="CONFIABLE",LightGreen, lbl_result.Text = "ACEPTABLE", Orange, lbl_result.Text = "NO ACEPTABLE", Red)
+        Fill: =RGBA(241, 244, 249, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =88
+        Size: =30
+        Text: |-
+            =If(
+                Value(lbl_evaluacion.Text) > 4,
+                "CONFIABLE",
+                Value(lbl_evaluacion.Text) >= 3,
+                "ACEPTABLE",
+                Value(lbl_evaluacion.Text) <= 2.9,
+                "NO ACEPTABLE"
+            )
+        Width: =916
+        Y: =517
+        ZIndex: =8
+
+    lbl_Acciones As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(109, 49, 162, 1)
+        BorderThickness: =1
+        Fill: =RGBA(241, 244, 249, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =35
+        Size: =10
+        Text: |-
+            =If(
+                lbl_result.Text = "CONFIABLE",
+                "Se considera  satisfactorio,  cumple con los requisitos de los procesos, productos y/o servicios requeridos.",
+                lbl_result.Text = "ACEPTABLE",
+                "Queda en periodo de prueba, se le informan los aspectos a mejorar y se realiza seguimiento en el próximo monitoreo.",
+                lbl_result.Text = "NO ACEPTABLE",
+                "No cumple los requisitos de los procesos, productos y/o servicios requeridos. Se retira del listado de proveedores externos y contratistas."
+            )
+        Width: =916
+        Y: =605
+        ZIndex: =9
+
