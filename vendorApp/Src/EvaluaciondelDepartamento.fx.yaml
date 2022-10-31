@@ -631,8 +631,8 @@
                         Defaults('Resultados Vendor Rating Apps'),
                         {
                             Title: txt_orden.Text,
-                            FDOC0: 'Fecha de Orden_DataCard2'.Default,
-                            FDOC: Vendor_DataCard2.Default
+                            'FDOC (FDOC0)': 'Fecha de Orden_DataCard2'.Default,
+                            Vendor: Vendor_DataCard2.Default
                         }
                     );
                     LookUp(
@@ -696,7 +696,8 @@
                                 item11: If(
                                     Value(lbl_eva1_ID.Text) = 11,
                                     Value(ThisRecord.Radio2.Selected.Value)
-                                )
+                                ),
+                                Evaluacion:Value(lbl_evaluacion.Text)
                             }
                         )
                     );
